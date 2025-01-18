@@ -1,1 +1,33 @@
-Chris is a stinky boy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reveal Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #text {
+            font-size: 24px;
+            color: red;
+            display: none; /* Hide the text initially */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Page</h1>
+    <button id="revealButton">Click me</button>
+    <p id="text">Chris is a stinky boy</p>
+
+    <script>
+        // Add a click event listener to the button
+        document.getElementById("revealButton").addEventListener("click", function () {
+            // Show the hidden text
+            document.getElementById("text").style.display = "block";
+        });
+    </script>
+</body>
+</html>
