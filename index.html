@@ -3,17 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reveal Text</title>
+    <title>Reveal Text with Animation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
         }
+
         #text {
             font-size: 24px;
             color: red;
             display: none; /* Hide the text initially */
+            animation: popOut 0.5s ease-in-out; /* Define animation but only runs when triggered */
+        }
+
+        /* Define the keyframes for the pop-out effect */
+        @keyframes popOut {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -23,10 +40,10 @@
     <p id="text">Chris is a stinky boy</p>
 
     <script>
-        // Add a click event listener to the button
         document.getElementById("revealButton").addEventListener("click", function () {
-            // Show the hidden text
-            document.getElementById("text").style.display = "block";
+            const textElement = document.getElementById("text");
+            textElement.style.display = "block"; // Show the text
+            textElement.style.animation = "popOut 0.5s ease-in-out"; // Trigger the animation
         });
     </script>
 </body>
