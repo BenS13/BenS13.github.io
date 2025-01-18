@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reveal Text with Animation</title>
+    <title>Reveal Text and Image with Animation</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,11 +11,20 @@
             margin-top: 50px;
         }
 
+        #container {
+            display: none; /* Hide the text and image initially */
+            animation: popOut 0.5s ease-in-out; /* Animation for reveal */
+        }
+
         #text {
             font-size: 24px;
             color: red;
-            display: none; /* Hide the text initially */
-            animation: popOut 0.5s ease-in-out; /* Define animation but only runs when triggered */
+            margin-bottom: 20px;
+        }
+
+        #image {
+            width: 300px; /* Adjust size of the image */
+            height: auto;
         }
 
         /* Define the keyframes for the pop-out effect */
@@ -37,13 +46,16 @@
 <body>
     <h1>Welcome to the Page</h1>
     <button id="revealButton">Click me</button>
-    <p id="text">Chris is a stinky boy</p>
+    <div id="container">
+        <p id="text">Chris is a stinky boy</p>
+        <img id="image" src="https://media.tenor.com/2Vh9EvBcwVQAAAAM/monkey-meme-meme.gif" alt="Funny monkey meme">
+    </div>
 
     <script>
         document.getElementById("revealButton").addEventListener("click", function () {
-            const textElement = document.getElementById("text");
-            textElement.style.display = "block"; // Show the text
-            textElement.style.animation = "popOut 0.5s ease-in-out"; // Trigger the animation
+            const containerElement = document.getElementById("container");
+            containerElement.style.display = "block"; // Show the container
+            containerElement.style.animation = "popOut 0.5s ease-in-out"; // Trigger the animation
         });
     </script>
 </body>
